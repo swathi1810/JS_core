@@ -1,23 +1,28 @@
 console.log("Start");
 
 
-quoteMe = (quote,name,callback) => {
+const quoteMe = (quote,name,call) => {
 setTimeout(() => {
     console.log("Now you get it");
-    callback({Quotation: quote});
+    call({Quotation: quote});
 
-},5000);
+},2000);
 }
 
-movieMe = (movies,callback) => {
+const movieMe = (quo,movies,callback) => {
     setTimeout(() => {
         console.log("Now you get it");
         callback({Movies: movies});
-    },5000);
+    },2000);
 } 
 
-const start = quoteMe("Life is Beautiful", "Swathi", start => {
-    console.log(start);
+var movies = ["StarDust","firefly","Tum mile","The Dark Knight"];
+
+const start = quoteMe("Life is Beautiful", "Swathi", s => {
+    console.log(s);
+    movieMe(s.Quotation,movies, p => {
+    console.log(p);
+    });
 });
  
 
